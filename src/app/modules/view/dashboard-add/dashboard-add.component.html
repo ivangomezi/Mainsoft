@@ -1,0 +1,48 @@
+<section class="container-content">
+  <h3 style="
+      color: rgb(0, 66, 13); 
+      text-align: center; 
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1mm;">Relacionar Libro con autores</h3>
+
+  <br>
+
+  <form [formGroup]="form" (ngSubmit)="add()">
+    <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        🛫 <i class="fas fa-caret-down"></i>
+                    </span>
+                </div>
+                <Select class="form-control custom-select" formControlName="idLibro" ngDefaultControl>
+                    <option value="">Seleccione Libro</option>
+                    <option [value]="c.idLibro" *ngFor="let c of dropLibro">{{c.titulo}}</option>
+                </Select>
+            </div>
+          </div>
+          <div class="col">
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        🛫 <i class="fas fa-caret-down"></i>
+                    </span>
+                </div>
+                <Select class="form-control custom-select" formControlName="idAutor" ngDefaultControl>
+                    <option value="">Seleccione Autor</option>
+                    <option [value]="c.idAutor" *ngFor="let c of dropAutor">{{c.nombre}} {{c.apellido}}</option>
+                </Select>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <button type="submit" class="btn btn-success m-2">Crear relación</button>
+        <button type="button" class="btn btn-primary" [routerLink]="['/admin/dashboard']">Cancelar</button>
+    </div>
+  </form>
+</section>

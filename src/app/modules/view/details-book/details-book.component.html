@@ -1,0 +1,18 @@
+<section class="container-content">
+  <button class="btn btn-info btn_prev" (click)="prev()">
+    ◄ Volver
+  </button>
+  <ul class="cards">
+      <li class="card_" *ngFor="let t of lista">
+          <span class="card__code">🔖 Código Libro: <strong>{{t.idLibro}}</strong></span>
+          <img src="https://www.eluniverso.com/resizer/jA_Um-Iri_XhFNnfE_VGSwrrYXY=/893x670/smart/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/eluniverso/NPCMI7NVIRGLBJXCI3VYOEWGPE.jpg" class="card__image" alt="" />
+          <div class="card__header">
+            <div class="card__header-text">
+                  <h3 class="card__title">📖 {{t.titulo}} - <small>{{t.nPaginas}} pag.</small></h3>
+                  <p class="card_body"><small>{{t.sinopsis}}</small></p>            
+                  <span class="card__status">{{t.autor}} <br> {{t.editorial}} - {{t.sede}}</span>
+              </div>
+          </div>  
+      </li>   
+    </ul>
+</section>

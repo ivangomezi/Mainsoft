@@ -1,0 +1,55 @@
+<section class="container-content">
+  <h3 style="
+      color: rgb(0, 66, 13); 
+      text-align: center; 
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1mm;">Registro de Autor</h3>
+
+  <br>
+
+  <form [formGroup]="form" (ngSubmit)="add()">
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            🔖
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+                </div>
+            </div>
+            <div class="col">
+              <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text">
+                          🔖
+                      </span>
+                  </div>
+                  <input type="text" class="form-control" formControlName="apellido" placeholder="Apellido">
+              </div>
+          </div>
+            <!--<div class="col">
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            🛫 <i class="fas fa-caret-down"></i>
+                        </span>
+                    </div>
+                    <Select class="form-control custom-select" formControlName="Id_Aerolinea" ngDefaultControl>
+                        <option value="">Seleccione Aerolinea</option>
+                        <option [value]="c.id" *ngFor="let c of dropAerolinea">{{c.name}}</option>
+                    </Select>
+                </div>
+            </div>-->
+        </div>
+
+        <hr>
+
+        <button type="submit" class="btn btn-success m-2">Crear autor</button>
+        <button type="button" class="btn btn-primary" [routerLink]="['/admin/dashboard']">Cancelar</button>
+    </div>
+  </form>
+</section>

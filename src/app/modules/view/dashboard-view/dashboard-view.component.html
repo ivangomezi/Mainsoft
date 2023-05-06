@@ -1,0 +1,145 @@
+<section class="container-content">
+  <div class="container-tool">
+    <button class="btn btn-dark btn-tool" (click)="clickAdd()">📁 Inventariar</button>
+  </div>
+  <div class="container-table">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Titulo</th>
+          <th scope="col">#Paginas</th>
+          <th scope="col">Autor</th>
+          <th scope="col">Editorial</th>
+          <th scope="col">Sede</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of lista">
+          <th>{{t.idLibro}}</th>
+          <td>{{t.titulo}}</td>
+          <td>{{t.nPaginas}}</td>
+          <td>{{t.autor}}</td>
+          <td>{{t.editorial}}</td>
+          <td>{{t.sede}}</td>
+          <td>
+            <button [id]="t.idLibro">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <div class="row row_">
+
+    <div class="col">
+      <div class="container-table">
+        <div class="row">
+          <div class="col">
+            <h3>Autores</h3>
+          </div>
+          <div class="col" style="text-align: end; margin-top: 5px; margin-right: 5px;">
+            <button class="btn btn-warning btn-tool" (click)="clickAutor()">🦜 Agregar Autor</button>
+          </div>
+        </div>
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let t of listAutor">
+              <th>{{t.idAutor}}</th>
+              <td>{{t.nombre}}</td>
+              <td>{{t.apellido}}</td>
+              <td style="display: flex;">
+                <button [id]="t.idAutor" (click)="clickDeleteAutor($event)">🗑️</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="container-table">
+        <div class="row">
+          <div class="col">
+            <h3>Editoriales</h3>
+          </div>
+          <div class="col" style="text-align: end; margin-top: 5px; margin-right: 5px;">
+            <button class="btn btn-warning btn-tool" (click)="clickEditor()">📰 Agregar Editorial</button>
+          </div>
+        </div>
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Sede</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let t of listEditor">
+              <th>{{t.idEditorial}}</th>
+              <td>{{t.nombre}}</td>
+              <td>{{t.sede}}</td>
+              <td>
+                <button [id]="t.idEditorial">🗑️</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row_">
+    <div class="col">
+      <div class="container-table">
+        <div class="row">
+          <div class="col">
+            <h3>Libros</h3>
+          </div>
+          <div class="col" style="text-align: end; margin-top: 5px; margin-right: 5px;">
+            <button class="btn btn-warning btn-tool" (click)="clickLibro()">📔 Agregar libro</button>
+          </div>
+        </div>
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Titulo</th>
+              <th scope="col">Sinopsis</th>
+              <th scope="col">#Paginas</th>
+              <th scope="col">Editorial</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let t of listLibro">
+              <th>{{t.idLibro}}</th>
+              <td>{{t.titulo}}</td>
+              <td>{{t.sinopsis}}</td>
+              <td>{{t.nPaginas}}</td>
+              <td>{{t.idEditorial}}</td>
+              <td>
+                <button [id]="t.idLibro">🗑️</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+</section>
+

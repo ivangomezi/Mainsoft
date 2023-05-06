@@ -1,0 +1,14 @@
+.container-content {
+  width: 50%;
+  margin: 20px auto;
+  margin-top: 30px;
+  padding: 20px;
+  background: var(--background-primary);
+  border: var(--border);
+  border-radius: 10px;
+}
+
+
+input.ng-touched.ng-invalid {
+  border-color: tomato;
+}

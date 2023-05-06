@@ -1,0 +1,28 @@
+<section class="wrapper">
+  <div class="container-wrapper">
+      <div class="brand-center">
+          <h1 style="font-size: 50px; font-weight: 700; letter-spacing: 1mm;">Plataforma Travel</h1>
+          <h1>¡Para nosotros es un placer ofrecerte los mejores libros, elige el que te guste!</h1>
+      </div>
+  </div>
+</section>
+
+<section class="container-content">
+  <ul class="cards">
+      <li class="card_" *ngFor="let t of lista">
+          <span class="card__code">🔖<small>{{t.nPaginas}} pag.</small></span>
+          <img src="https://www.nationalgeographic.com.es/medio/2022/04/23/libros_b2d310d5_1280x852.jpg" class="card__image" alt="" />
+          <div class="card__header">                  
+              <div class="card__header-text">
+                    <h3 class="card__title">📚 {{t.titulo}}</h3>
+                    <p class="card_body"><small>{{t.sinopsis}}</small></p>
+                    <div style="text-align: center;">
+                        <button class="btn btn-info" [id]="t.idLibro" (click)="detalleBook($event)">
+                            Detalle
+                        </button>
+                    </div>
+              </div>
+          </div>  
+      </li>   
+    </ul>
+</section>
