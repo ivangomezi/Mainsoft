@@ -20,4 +20,8 @@ export class EditorService {
   post(data: Editoriales): Observable<Editoriales>{
     return this.http.post<Editoriales>(this.Url + this.Api, data);
   }
+
+  detele(id: any): Observable<any> {
+    return this.http.delete(this.Url + this.Api + '/' + id);
+  }
 }

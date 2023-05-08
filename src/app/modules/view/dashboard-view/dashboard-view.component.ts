@@ -48,7 +48,9 @@ export class DashboardViewComponent implements OnInit {
   clickDeleteAutor(id:any) {
     let id_ = id.target.id
     this.apiAutor.detele(id_).subscribe(data => {
-      this.listAutor = data
+      this.apiAutor.get().subscribe(data => {
+        this.listAutor = data
+      })
     }), (error: any) => {
       //console.log(error);
       alert("Autor con relacionado a un libro.");
@@ -59,13 +61,54 @@ export class DashboardViewComponent implements OnInit {
   }
   //Autores
 
+  //Relación
+  clickDeleteRelacion(id:any) {
+    let id_ = id.target.id
+    this.apiRelation.detele(id_).subscribe(data => {
+      this.api.getAll().subscribe(data => {
+        this.lista = data
+      })
+    }), (error: any) => {
+      //console.log(error);
+      alert("relacionado.");
+    }
+  }
   clickAdd() {
     this.router.navigate((['admin/dashboard/add']))
+  }
+  //Relación
+
+  //Libros
+  clickDeleteLibro(id:any) {
+    let id_ = id.target.id
+    this.apiLibro.detele(id_).subscribe(data => {
+      this.apiLibro.get().subscribe(data => {
+        this.listLibro = data
+      })
+    }), (error: any) => {
+      //console.log(error);
+      alert("Libro relacionado.");
+    }
   }
   clickLibro() {
     this.router.navigate((['admin/dashboard/libro']))
   }
+  //Libros
+
+  //Editoriales
+  clickDeleteEditorial(id:any) {
+    let id_ = id.target.id
+    this.apiEditor.detele(id_).subscribe(data => {
+      this.apiEditor.get().subscribe(data => {
+        this.listEditor = data
+      })
+    }), (error: any) => {
+      //console.log(error);
+      alert("Editorial con relacionado a un libro.");
+    }
+  }
   clickEditor(){
     this.router.navigate((['admin/dashboard/editorial']))
   }
+  //Editoriales
 }

@@ -1,4 +1,5 @@
 export class ViewDetails {
+  IdKey ?: number;
   IdLibro ?: number;
   Titulo ?: string;
   Sinopsis ?: string;
